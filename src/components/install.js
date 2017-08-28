@@ -1,7 +1,9 @@
 import Input from './input/index';
+import Modal from './modal/index';
 
 const components = [
-    Input
+    Input,
+    Modal
 ];
 
 const install = (Vue, opts = {}) => {
@@ -15,5 +17,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-    install
+    install,
+    Modal
 };

@@ -1,5 +1,8 @@
 <template>
-    <wlInput></wlInput>
+    <div>
+        <wlInput></wlInput>
+        <wlModal></wlModal>
+    </div>
 </template>
 
 <script>
