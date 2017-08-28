@@ -1,9 +1,13 @@
 <template>
-    <wlInput></wlInput>
+    <div class="wl-modal">
+
+    </div>
 </template>
 
 <script>
-    export default {};
+    export default {
+        name: 'wlModal'
+    };
 
 </script>
 
