@@ -1,7 +1,7 @@
-var path = require('path')
-var utils = require('./utils')
-var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
+let path = require('path');
+let utils = require('./utils');
+let config = require('../config');
+let vueLoaderConfig = require('./vue-loader.conf');
 let fs = require('fs');
 
 function resolve(dir) {
@@ -13,6 +13,7 @@ let alias = {
     '@': resolve('src')
 };
 
+// 获取所有文件夹  设置别名
 let dirList = fs.readdirSync(path.join(__dirname, '../src'));
 
 dirList.forEach(function (item) {
@@ -23,10 +24,9 @@ dirList.forEach(function (item) {
     }
 });
 
-
 module.exports = {
     entry: {
-        app: './src/main.js'
+        app: ["babel-polyfill", "./src/main.js"]
     },
     output: {
         path: config.build.assetsRoot,
@@ -69,14 +69,6 @@ module.exports = {
                 }
             },
             {
-                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: utils.assetsPath('media/[name].[hash:7].[ext]')
-                }
-            },
-            {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
@@ -86,4 +78,4 @@ module.exports = {
             }
         ]
     }
-}
+};

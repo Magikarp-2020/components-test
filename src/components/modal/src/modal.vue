@@ -9,8 +9,7 @@
                     提示123123
                 </div>
                 <div class="wl-modal-footer">
-                    <div class="wl-modal-footer-item">确定</div>
-                    <div class="wl-modal-footer-item">取消</div>
+                    <div class="wl-modal-footer-item" v-for="item in btn">item</div>
                 </div>
             </div>
         </div>
@@ -28,7 +27,7 @@
             btn: {
                 type: Array,
                 default() {
-                    return [];
+                    return ['确定', '取消'];
                 }
             }
         }
