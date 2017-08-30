@@ -12,6 +12,8 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
+    "fastclick": "^1.0.6",
     "moment": "^2.18.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",

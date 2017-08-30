@@ -4,6 +4,12 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import component from '_components/install';
+import FastClick from 'fastclick';
+import 'animate.css';
+
+document.addEventListener('DOMContentLoaded', function () {
+    FastClick.attach(document.body);
+}, false);
 
 component.install(Vue);
 

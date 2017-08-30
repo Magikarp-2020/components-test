@@ -1,14 +1,14 @@
 <template>
     <div class="wl-modal">
-        <div class="wl-modal-wrapper">
-            <div class="wl-modal-box wl-modal-box-size-default">
-                <div class="wl-modal-title">
+        <div class="wl-modal-wrapper" @click.self="close" v-show="value">
+            <div v-if="value" class="wl-modal-box wl-modal-box-size-default">
+                <div class="wl-modal-title" v-if="title">
                     提示
                 </div>
                 <div class="wl-modal-content">
                     提示123123
                 </div>
-                <div class="wl-modal-footer">
+                <div class="wl-modal-footer" v-if="btn.length">
                     <div class="wl-modal-footer-item" v-for="item in btn">item</div>
                 </div>
             </div>
@@ -27,8 +27,18 @@
             btn: {
                 type: Array,
                 default() {
-                    return ['确定', '取消'];
+                    return [];
                 }
+            },
+            title: {
+                type: String,
+                default: ''
+            }
+        },
+        methods: {
+            close() {
+                console.log('11');
+                this.$emit('input', false);
             }
         }
     };
@@ -72,7 +82,7 @@
         }
         &-content {
             font-size: pxRem(25);
-            padding: pxRem(8);
+            padding: pxRem(16);
         }
         &-footer {
             border-top: 1px solid #ccc;
