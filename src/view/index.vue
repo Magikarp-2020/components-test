@@ -2,7 +2,7 @@
     <div>
         <button @click="modal = true">modal</button>
         <button @click="test = !test">fadeIn</button>
-        <wlInput></wlInput>
+        <wlInput placeholder="input"></wlInput>
         <wlModal v-model="modal" :btn="['确定', '取消']"></wlModal>
 
         <transition
@@ -11,6 +11,12 @@
         >
             <p v-if="test">hello</p>
         </transition>
+
+        <wl-upload-group>
+            <wl-upload @change="testImg = arguments[0]">123123</wl-upload>
+        </wl-upload-group>
+
+        <img :src="testImg" alt="">
     </div>
 </template>
 
@@ -19,7 +25,8 @@
         data() {
             return {
                 modal: false,
-                test: false
+                test: false,
+                testImg: ''
             };
         }
     };

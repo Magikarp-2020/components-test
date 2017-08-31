@@ -1,9 +1,12 @@
 import Input from './input/index';
 import Modal from './modal/index';
+import {Upload, UploadGroup} from './upload/index';
 
 const components = [
     Input,
-    Modal
+    Modal,
+    Upload,
+    UploadGroup
 ];
 
 const install = (Vue, opts = {}) => {
@@ -18,5 +21,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
     install,
-    Modal
+    Modal,
+    Upload,
+    UploadGroup
 };

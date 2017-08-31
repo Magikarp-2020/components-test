@@ -153,11 +153,11 @@
             },
             handleFocus(e) {
                 this.$emit('focus', e);
-                this.$store.commit('setPayShow', false);
+//                this.$store.commit('setPayShow', false);
             },
             handleBlur(e) {
                 this.$emit('blur', e);
-                this.$store.commit('setPayShow', true);
+//                this.$store.commit('setPayShow', true);
                 this.handleException();
             },
             handleException() {
