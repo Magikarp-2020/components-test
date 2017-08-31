@@ -1,5 +1,8 @@
 <template>
-    <button class="wl-button" :class="['wl-button-' + theme, 'wl-button-' + size]">
+    <button class="wl-button" :class="['wl-button-' + theme, 'wl-button-' + size, {
+        'wl-button-loading': loading
+    }]">
+        <i class="iconfont icon-loading" v-if="loading"></i>
         <slot></slot>
     </button>
 </template>
@@ -15,6 +18,10 @@
             size: {
                 type: String,
                 default: 'block'
+            },
+            loading: {
+                type: Boolean,
+                default: true
             }
         }
     };
@@ -32,6 +39,19 @@
         background: $colorDefault;
         border-radius: pxRem(4);
         outline: none;
+        position: relative;
+        &:active {
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -1px;
+                bottom: -1px;
+                right: -1px;
+                left: -1px;
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
         &-default {
             border-color: #ccc;
             background-color: $colorDefault;
@@ -60,7 +80,18 @@
         }
         &-block {
             display: block;
-            width:100%;
+            width: 100%;
+        }
+        &-loading {
+            opacity: 0.8;
+        }
+        .icon-loading {
+            position: relative;
+            top: 1px;
+            margin-right: pxRem(5);
+            display: inline-block;
+            animation: rotating 1s linear infinite;
+            /*transform: rotateZ(58deg);*/
         }
     }
 </style>

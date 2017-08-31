@@ -1,6 +1,6 @@
 <template>
     <div>
-        <wl-button @click="modal = true">modal</wl-button>
+        <wl-button @click="modal = true" style="margin-bottom: 8px;">modal</wl-button>
         <wl-button @click="test = !test">fadeIn</wl-button>
         <wlInput placeholder="input"></wlInput>
         <wlModal v-model="modal" :btn="['确定', '取消']"></wlModal>
