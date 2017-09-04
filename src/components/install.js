@@ -2,13 +2,15 @@ import Input from './input/index';
 import Modal from './modal/index';
 import {Upload, UploadGroup} from './upload/index';
 import Button from './button/index';
+import Select from './select/index';
 
 const components = [
     Input,
     Modal,
     Upload,
     UploadGroup,
-    Button
+    Button,
+    Select
 ];
 
 const install = (Vue, opts = {}) => {
@@ -26,5 +28,6 @@ export default {
     Modal,
     Upload,
     UploadGroup,
-    Button
+    Button,
+    Select
 };

@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import '~_assets/font/iconfont.css';
 
+.iconfont {
+  font-size: inherit;
+}
 @function pxRem($px, $base-font-size: 75px) {
   @if (unitless($px)) {
     @return pxRem($px + 0px);

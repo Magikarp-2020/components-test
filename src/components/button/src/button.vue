@@ -1,7 +1,11 @@
 <template>
-    <button class="wl-button" :class="['wl-button-' + theme, 'wl-button-' + size, {
-        'wl-button-loading': loading
-    }]">
+    <button class="wl-button"
+            :class="['wl-button-' + theme, 'wl-button-' + size, {
+                'wl-button-disable': loading
+            }]"
+            :disabled="loading"
+            @tap="handleTap"
+            @click="handleClick">
         <i class="iconfont icon-loading" v-if="loading"></i>
         <slot></slot>
     </button>
@@ -21,7 +25,15 @@
             },
             loading: {
                 type: Boolean,
-                default: true
+                default: false
+            }
+        },
+        methods: {
+            handleTap(e) {
+                this.$emit('tap', e);
+            },
+            handleClick(e) {
+                this.$emit('click', e);
             }
         }
     };
@@ -82,7 +94,7 @@
             display: block;
             width: 100%;
         }
-        &-loading {
+        &-disable {
             opacity: 0.8;
         }
         .icon-loading {
